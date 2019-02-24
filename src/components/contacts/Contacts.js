@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Contact from './Contact';
 import { connect } from 'react-redux';
-import { GET_CONTACTS } from '../../actions/types';
-// When we have an action its called as a prop. Bring anything from redux state is put in as props
+import { getContacts } from '../../actions/contactActions';
+// When we have an action its called as a prop. Bringing anything from redux state is put in as props
 import PropTypes from 'prop-types';
 
 class Contacts extends Component {
@@ -34,11 +34,11 @@ const mapStateToProps = state => ({
 });
 
 // Fire off an action. In this case we want it to call GET_CONTACTS
-const mapDispatchToProps = dispatch => ({
-  getContacts: () => dispatch({ type: GET_CONTACTS })
-});
+// Coded out because we have a separate actions file for getting contacts.
+// const mapDispatchToProps = dispatch => ({
+//   getContacts: () => dispatch({ type: GET_CONTACTS })
+// });
 
-//
 Contact.propTypes = {
   contacts: PropTypes.array.isRequired,
   getContacts: PropTypes.func.isRequired
@@ -49,5 +49,5 @@ Contact.propTypes = {
 // Pass these constands to connect()
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  { getContacts }
 )(Contacts);
