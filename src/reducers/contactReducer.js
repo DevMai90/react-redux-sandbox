@@ -23,7 +23,6 @@ export default function(state = initialState, action) {
       return {
         ...state,
         contacts: [action.payload, ...state.contacts]
-        // state.contacts.push(action.payload) old way
       };
     default:
       return state;
