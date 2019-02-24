@@ -1,13 +1,15 @@
 // ACTION CREATORS
-import { GET_CONTACTS } from './types';
-import { DELETE_CONTACT } from './types';
-import { ADD_CONTACT } from './types';
+import { GET_CONTACTS, DELETE_CONTACT, ADD_CONTACT } from './types';
+import axios from 'axios';
 
 // Actions are OBJECTS
-export const getContacts = () => {
-  return {
-    type: GET_CONTACTS
-  };
+export const getContacts = () => async dispatch => {
+  const res = await axios.get('https://jsonplaceholder.typicode.com/users');
+
+  dispatch({
+    type: GET_CONTACTS,
+    payload: res.data
+  });
 };
 
 export const deleteContact = id => {
