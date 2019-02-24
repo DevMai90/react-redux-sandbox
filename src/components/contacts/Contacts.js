@@ -39,7 +39,7 @@ const mapStateToProps = state => ({
 //   getContacts: () => dispatch({ type: GET_CONTACTS })
 // });
 
-Contact.propTypes = {
+Contacts.propTypes = {
   contacts: PropTypes.array.isRequired,
   getContacts: PropTypes.func.isRequired
 };
