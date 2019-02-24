@@ -1,4 +1,5 @@
-// Meeting place for all of our reducers
+// ROOT REDUCER
+// Meeting place for all of our reducers.
 import { combineReducers } from 'redux';
 import contactReducer from './contactReducer';
 
